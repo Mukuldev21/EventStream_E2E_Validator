@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Order Event",
+    "type": "object",
+    "properties": {
+        "orderId": {
+            "type": "string",
+            "description": "Unique identifier for the order"
+        },
+        "status": {
+            "type": "string",
+            "enum": [
+                "CREATED",
+                "PROCESSED",
+                "SHIPPED",
+                "CANCELLED"
+            ],
+            "description": "Current status of the order"
+        },
+        "amount": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Total value of the order"
+        },
+        "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Time when the event occurred"
+        }
+    },
+    "required": [
+        "orderId",
+        "status",
+        "amount"
+    ],
+    "additionalProperties": true
+}
