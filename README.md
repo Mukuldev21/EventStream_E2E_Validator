@@ -1,4 +1,4 @@
-🌐 **EventStream E2E Validator** — Playwright + Kafka Event Automation Framework
+# 🌐 EventStream E2E Validator — Playwright + Kafka Event Automation Framework
 
     A end-to-end testing framework that validates event-driven microservices by ensuring that UI actions (simulated or real) correctly trigger Kafka events.
 
@@ -6,7 +6,7 @@
 
 **Fintech | Banking | E-commerce | Microservices | Real-time systems | Event-driven platforms**
 
-🚀 **Key Features**
+## 🚀 **Key Features**
 
 ✔ **UI → Kafka End-to-End Validation**
 
@@ -28,7 +28,7 @@
 
     Includes full blueprint, folder structure, documentation, mock UI, producer, consumer, and Playwright test flows.
 
-🏗 **Architecture**
+## 🏗 **Architecture**
 
         ┌────────────────────────────┐
         │      Playwright UI Layer   │
@@ -60,7 +60,7 @@
 
 
 
-📁 **Project Folder Structure**
+## 📁 **Project Folder Structure**
         
 
 
@@ -102,14 +102,14 @@
         └── how-it-works.md
 
 
-🐳 **Running Kafka Using Docker**
+## 🐳 **Running Kafka Using Docker**
 
 Start Kafka + Zookeeper:
 
         docker-compose up -d
 
 
-📝 **Prerequisites**
+## 📝 **Prerequisites**
 
 
     Node.js (v16 or higher)
