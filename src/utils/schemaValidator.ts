@@ -3,7 +3,10 @@ import fs from 'fs';
 import path from 'path';
 import { Logger } from './logger';
 
+import addFormats from 'ajv-formats';
+
 const ajv = new Ajv();
+addFormats(ajv);
 
 export interface ValidationResult {
     isValid: boolean;

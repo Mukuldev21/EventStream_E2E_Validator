@@ -43,7 +43,7 @@ class KafkaConsumer {
 
     public async subscribe(topic: string): Promise<void> {
         try {
-            await this.consumer.subscribe({ topic, fromBeginning: false });
+            await this.consumer.subscribe({ topic, fromBeginning: true });
             Logger.info(`Subscribed to topic: ${topic}`);
         } catch (error) {
             Logger.error(`Error subscribing to topic ${topic}`, error);
