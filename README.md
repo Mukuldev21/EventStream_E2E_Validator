@@ -1,33 +1,34 @@
 🌐 **EventStream E2E Validator** — Playwright + Kafka Event Automation Framework
 
-A end-to-end testing framework that validates event-driven microservices by ensuring that UI actions (simulated or real) correctly trigger Kafka events.
-This framework combines Playwright for UI workflows, KafkaJS for message stream validation, and AJV schema validation for contract enforcement.
+    A end-to-end testing framework that validates event-driven microservices by ensuring that UI actions (simulated or real) correctly trigger Kafka events.
 
-Fintech | Banking | E-commerce | Microservices | Real-time systems | Event-driven platforms
+    This framework combines Playwright for UI workflows, KafkaJS for message stream validation, and AJV schema validation for contract enforcement.
 
-🚀 Key Features
+**Fintech | Banking | E-commerce | Microservices | Real-time systems | Event-driven platforms**
 
-✔ UI → Kafka End-to-End Validation
+🚀 **Key Features**
 
-Simulated or real UI actions trigger events that are validated through Kafka consumers.
+✔ **UI → Kafka End-to-End Validation**
 
-✔ Event Schema Validation
+    Simulated or real UI actions trigger events that are validated through Kafka consumers.
 
-Using AJV, Kafka payloads are validated against strict JSON schemas.
+✔ **Event Schema Validation**
 
-✔ Microservices Ready
+    Using AJV, Kafka payloads are validated against strict JSON schemas.
 
-Designed for event-driven architectures used in modern product companies.
+✔ **Microservices Ready**
 
-✔ Supports Local Kafka via Docker
+    Designed for event-driven architectures used in modern product companies.
 
-Easily run Kafka + Zookeeper using docker-compose.
+✔ **Supports Local Kafka via Docker**
 
-✔ Realistic Enterprise-Style Project
+    Easily run Kafka + Zookeeper using docker-compose.
 
-Includes full blueprint, folder structure, documentation, mock UI, producer, consumer, and Playwright test flows.
+✔ **Realistic Enterprise-Style Project**
 
-🏗 Architecture
+    Includes full blueprint, folder structure, documentation, mock UI, producer, consumer, and Playwright test flows.
+
+🏗 **Architecture**
 
         ┌────────────────────────────┐
         │      Playwright UI Layer   │
@@ -59,7 +60,7 @@ Includes full blueprint, folder structure, documentation, mock UI, producer, con
 
 
 
-📁 Project Folder Structure
+📁 **Project Folder Structure**
         
 
 
@@ -101,14 +102,14 @@ Includes full blueprint, folder structure, documentation, mock UI, producer, con
         └── how-it-works.md
 
 
-🐳 Running Kafka Using Docker
+🐳 **Running Kafka Using Docker**
 
 Start Kafka + Zookeeper:
 
         docker-compose up -d
 
 
-📝 Prerequisites
+📝 **Prerequisites**
 
 
     Node.js (v16 or higher)
