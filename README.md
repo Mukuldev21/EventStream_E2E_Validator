@@ -1,4 +1,4 @@
-🌐 EventStream E2E Validator — Playwright + Kafka Event Automation Framework
+🌐 **EventStream E2E Validator** — Playwright + Kafka Event Automation Framework
 
 A end-to-end testing framework that validates event-driven microservices by ensuring that UI actions (simulated or real) correctly trigger Kafka events.
 This framework combines Playwright for UI workflows, KafkaJS for message stream validation, and AJV schema validation for contract enforcement.
