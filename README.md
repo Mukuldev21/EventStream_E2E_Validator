@@ -60,7 +60,7 @@ This framework combines Playwright for UI workflows, KafkaJS for message stream 
         │       Test Assertions      │
         └────────────────────────────┘
 
-
+> 📖 **Deep Dive:** Check out the [**How It Works**](docs/how-it-works.md) guide for a detailed explanation of the event-driven validation workflow.
 
 ## 📁 **Project Folder Structure**
         
@@ -99,8 +99,7 @@ This framework combines Playwright for UI workflows, KafkaJS for message stream 
     ├── schema/
     │    └── order.schema.json
     └── docs/
-        ├── architecture.md
-        ├── sequence-diagram.md
+        ├── eventstream.png
         └── how-it-works.md
 
 
