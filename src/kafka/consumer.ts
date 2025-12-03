@@ -2,6 +2,7 @@ import { Consumer } from 'kafkajs';
 import { kafka } from './kafkaClient';
 import { kafkaConfig } from '../config/kafka.config';
 import { Logger } from '../utils/logger';
+import { randomUUID } from 'crypto';
 
 type EventPredicate = (event: any) => boolean;
 
@@ -18,7 +19,8 @@ class KafkaConsumer {
     private isRunning: boolean = false;
 
     constructor() {
-        this.consumer = kafka.consumer({ groupId: kafkaConfig.groupId });
+        const groupId = `${kafkaConfig.groupId}-${randomUUID()}`;
+        this.consumer = kafka.consumer({ groupId });
     }
 
     public async connect(): Promise<void> {
@@ -34,6 +36,7 @@ class KafkaConsumer {
     public async disconnect(): Promise<void> {
         try {
             await this.consumer.disconnect();
+            this.isRunning = false;
             Logger.info('Consumer disconnected');
         } catch (error) {
             Logger.error('Error disconnecting consumer', error);

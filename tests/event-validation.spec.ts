@@ -14,6 +14,8 @@ test.describe('EventStream E2E Validation', () => {
         await kafkaProducer.connect();
         await kafkaConsumer.subscribe(TOPIC);
         await kafkaConsumer.run();
+        // Give some time for the consumer to join the group and assign partitions
+        await new Promise(resolve => setTimeout(resolve, 3000));
     });
 
     test.afterAll(async () => {
