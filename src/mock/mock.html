@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventStream Mock UI</title>
+</head>
+
+<body>
+    <h1>EventStream Mock UI</h1>
+    <button id="place-order-btn">Place Order</button>
+    <div id="status"></div>
+
+    <script>
+        document.getElementById('place-order-btn').addEventListener('click', async () => {
+            const orderId = `ORDER-${Date.now()}`;
+            const payload = {
+                orderId: orderId,
+                status: 'CREATED',
+                amount: 150.00,
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                // Use absolute URL so we can intercept it easily even from file://
+                const response = await fetch('http://localhost:5000/api/orders', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    document.getElementById('status').innerText = `Order placed: ${orderId}`;
+                } else {
+                    document.getElementById('status').innerText = 'Failed to place order';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('status').innerText = 'Error placing order';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -52,4 +52,19 @@ This document outlines the test scenarios covered by the EventStream E2E Validat
     *   The consumer correctly resolves with the "Target Event".
     *   Noise events do not trigger a false positive resolution.
 
+## 🔵 UI Integration
+**File:** `tests/ui-integration.spec.ts`
 
+### 5. UI to Kafka Flow
+*   **Objective**: Verify the end-to-end flow from a UI action to backend simulation and finally to Kafka event consumption.
+*   **Steps**:
+    1.  Subscribe to `order.events` topic.
+    2.  Load `src/mock/mock.html` in the browser.
+    3.  Intercept the API call to `http://localhost:5000/api/orders`.
+    4.  Click the "Place Order" button in the UI.
+    5.  In the interception handler, publish the event to Kafka.
+    6.  Wait for the consumer to receive the event.
+*   **Expected Result**:
+    *   UI displays success message.
+    *   Consumer receives the event with the correct `orderId`.
+    *   Event data matches the UI action.
